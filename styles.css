@@ -10,8 +10,28 @@ body {
     font-family: 'Quattrocento', serif;
 }
 
-nav {
+header {
+    padding: 20px;
     font-family: 'DM Serif Display', serif;
+}
+
+nav {
+    margin: 0 auto; /* top/bottom: 0; left/right: auto */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.h1--nav {
+    text-align: start;
+    font-size: 48px;
+}
+.a--nav {
+    text-align: end;
+    text-decoration: none;    /* remove underline */
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: rgb(133, 133, 133);
 }
 
 img {
