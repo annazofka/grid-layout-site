@@ -16,6 +16,7 @@ header {
 }
 
 nav {
+    max-width: 1200px;
     margin: 0 auto; /* top/bottom: 0; left/right: auto */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -34,8 +35,27 @@ nav {
     color: rgb(133, 133, 133);
 }
 
-img {
-    max-width: 100%;
+main div {
+    max-width: 1200px;
+    margin: 30px auto; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px;
+}
+
+main img {
+    width: 100%;
     height: auto;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
+
+main .short {
+    grid-row: span 1;
+}
+
+main .long {
+    grid-row: span 1;
+}
 
