@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Sculptures</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sculptures</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+	<body>
+		<header>
+			<nav>
+				<h1 class="h1 h1--nav">sculptures.</h1>
+				<a href="/" class="a a--nav">View slideshow</a>
+			</nav>
+		</header>
+		<main>
+			<article id="list-of-images">
+				<img id="0" src="images/Image_AI__91 square.jpeg" alt="pearl sculpture" class="short" />
+				<img id="1" src="images/Image_AI__87-scaled.jpg" alt="minimal sculpture" class="long" />
+				<img id="2" src="images/Image_AI__92 square.jpeg" alt="pearl sculpture" class="short" />
+				<img id="3" src="images/Image_AI__88-scaled.jpg" alt="minimal sculpture" class="long" />
+				<img id="4" src="images/Image_AI__89-scaled.jpg" alt="minimal sculpture" class="long" />
+				<img id="5" src="images/Image_AI__93 square.jpeg" alt="pearl sculpture" class="short" />
+				<img id="6" src="images/Image_AI__94 square.jpeg" alt="pearl sculpture" class="short" />
+				<img id="7" src="images/Image_AI__90-scaled.jpg" alt="minimal sculpture" class="long" />
+				<img id="8" src="images/Image_AI__91 square.jpeg" alt="pearl sculpture" class="short" />
+				<img id="9" src="images/Image_AI__96-scaled.jpg" alt="pearl sculpture" class="long" />
+				<img id="10" src="images/Image_AI__98-scaled.jpg" alt="pearl sculpture" class="long" />
+				<img id="11" src="images/Image_AI__92 square.jpeg" alt="pearl sculpture" class="short" />
+			</article>
 
-<body>
-    <header>
-        <nav>
-            <h1 class="h1 h1--nav">sculptures.</h1>
-            <a href="/" class="a a--nav">View slideshow</a>
-        </nav>
-    </header>
-    <main>
-        <div>
-            <img src="images/Image_AI__91 square.jpeg" alt="pearl sculpture" class="short">
-            <img src="images/Image_AI__87-scaled.jpg" alt="minimal sculpture" class="long">
-            <img src="images/Image_AI__92 square.jpeg" alt="pearl sculpture" class="short">
-            <img src="images/Image_AI__88-scaled.jpg" alt="minimal sculpture" class="long">
-            <img src="images/Image_AI__89-scaled.jpg" alt="minimal sculpture" class="long">
-            <img src="images/Image_AI__93 square.jpeg" alt="pearl sculpture" class="short">
-            <img src="images/Image_AI__94 square.jpeg" alt="pearl sculpture" class="short">
-            <img src="images/Image_AI__90-scaled.jpg" alt="minimal sculpture" class="long">
-            <img src="images/Image_AI__91 square.jpeg" alt="pearl sculpture" class="short">
-            <img src="images/Image_AI__96-scaled.jpg" alt="pearl sculpture" class="long">
-            <img src="images/Image_AI__98-scaled.jpg" alt="pearl sculpture" class="long">
-            <img src="images/Image_AI__92 square.jpeg" alt="pearl sculpture" class="short">
-        </div>
-    </main>
-</body>
+			<div id="backdrop hide" class="backdrop">
+				<button id="prev-button" class="prev-button">
+					<i class="fa-solid fa-angle-left"></i>
+				</button>
 
+				<button id="next-button" class="next-button">
+					<i class="fa-solid fa-angle-right"></i>
+				</button>
+
+				<button id="close-button" class="close-button">&times;</button>
+
+				<img id="image-previewer" src="images/Image_AI__87-scaled.jpg" alt="" />
+			</div>
+		</main>
+	</body>
 </html>
