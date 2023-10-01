@@ -6,7 +6,7 @@ const $nextButton = document.querySelector('#next-button');
 const $prevButton = document.querySelector('#prev-button');
 let counter = 1;
 
-const assignImageSource = imageId => {
+const assignImageSource = () => {
 	$imagePreviewer.src = `/images/${counter}.jpg`;
 };
 
@@ -38,9 +38,5 @@ $prevButton.addEventListener('click', () => {
 });
 
 $closeButton.addEventListener('click', () => {
-	endSlideshow();
-});
-
-$backdrop.addEventListener('click', () => {
 	endSlideshow();
 });
