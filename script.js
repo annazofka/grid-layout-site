@@ -1,26 +1,42 @@
+const $allImages = document.querySelector('#list-of-images');
 const $slideshow = document.querySelector('#slideshow');
 const $imagePreviewer = document.querySelector('#image-previewer');
 const $backdrop = document.querySelector('#backdrop');
 const $closeButton = document.querySelector('#close-button');
 const $nextButton = document.querySelector('#next-button');
 const $prevButton = document.querySelector('#prev-button');
-let counter = 1;
+let counter = 0;
 
-const assignImageSource = () => {
-	$imagePreviewer.src = `/images/${counter}.jpg`;
+const assignImageSource = imageId => {
+	$imagePreviewer.src = `/images/${imageId}.jpg`;
+};
+
+const startSlideshow = () => {
+	$backdrop.classList.remove('hide');
 };
 
 const endSlideshow = () => {
 	$backdrop.classList.add('hide');
 };
 
+$allImages.addEventListener('click', event => {
+	if (event.target.localName === 'img') {
+		const imageId = event.target.id;
+		counter = imageId * 1;
+		assignImageSource(imageId);
+		startSlideshow();
+	}
+});
+
 const openSlideshow = $slideshow.addEventListener('click', event => {
-	$backdrop.classList.remove('hide');
+	counter = 0;
+	startSlideshow();
 	event.preventDefault();
 });
 
-$nextButton.addEventListener('click', () => {
-	if (counter !== 12) {
+$nextButton.addEventListener('click', event => {
+	event.stopPropagation();
+	if (counter < 11) {
 		counter = counter + 1;
 		assignImageSource(counter);
 	} else {
@@ -28,8 +44,19 @@ $nextButton.addEventListener('click', () => {
 	}
 });
 
-$prevButton.addEventListener('click', () => {
-	if (counter !== 1) {
+$nextButton.addEventListener('keydown', event => {
+	event.stopPropagation();
+	if (counter < 11) {
+		counter = counter + 1;
+		assignImageSource(counter);
+	} else {
+		endSlideshow();
+	}
+});
+
+$prevButton.addEventListener('click', event => {
+	event.stopPropagation();
+	if (counter > 0) {
 		counter = counter - 1;
 		assignImageSource(counter);
 	} else {
@@ -39,4 +66,8 @@ $prevButton.addEventListener('click', () => {
 
 $closeButton.addEventListener('click', () => {
 	endSlideshow();
+});
+
+$imagePreviewer.addEventListener('click', event => {
+	event.stopPropagation();
 });
